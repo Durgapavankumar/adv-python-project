@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects | Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="/">Durga Pavan's Portfolio</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="/projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/experience">Experience</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container mt-5 pt-5">
+      <h2 class="text-primary font-weight-bold">Projects</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Food Ordering App</h5>
+              <p class="card-text">
+                Built a responsive food ordering platform using React, Tailwind
+                CSS, Redux Toolkit, and Node.js. Features include search,
+                restaurant listings, and optimized state management.
+              </p>
+              <p>
+                <strong>Technologies:</strong> React, Tailwind CSS, Node.js,
+                Redux Toolkit
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">DevTinder</h5>
+              <p class="card-text">
+                A full-stack social platform with real-time features, secure
+                JWT-based authentication, and dynamic feed pagination for
+                developers to connect.
+              </p>
+              <p>
+                <strong>Technologies:</strong> Node.js, Express, MongoDB, React,
+                JWT, Mongoose
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">CloudTunes</h5>
+              <p class="card-text">
+                Developed a scalable ETL pipeline for Spotify data using AWS
+                services, enabling SQL-based real-time trend analysis.
+              </p>
+              <p>
+                <strong>Technologies:</strong> AWS (Lambda, S3, Glue, Athena),
+                Spotify API
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer text-center fixed-bottom">
+      <p>&copy; 2024 Durga Pavan Kumar Pailla. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

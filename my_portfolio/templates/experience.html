@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Experience | Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    {% include 'home.html' %}
+
+    <div class="container mt-5">
+      <h2>Experience</h2>
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">
+            Teaching Assistant, University of Central Missouri
+          </h5>
+          <p class="card-text">January 2024 - May 2024</p>
+          <ul>
+            <li>
+              Conducted Advanced Algorithms course recitations, simplifying
+              complex concepts and enhancing students' understanding.
+            </li>
+            <li>
+              Led weekly office hours for 80+ students, providing personalized
+              support and improving analytical skills.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Application Developer, DBS Bank</h5>
+          <p class="card-text">July 2022 - August 2023</p>
+          <ul>
+            <li>
+              Developed and maintained C and JavaScript backend services for
+              Digi Taiwan's banking platform, improving reliability and reducing
+              load times by 40%.
+            </li>
+            <li>
+              Led code reviews and applied defensive design techniques to
+              minimize production errors and enhance security.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <footer class="text-center mt-5">
+      <p>&copy; 2024 Durga Pavan Kumar Pailla. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

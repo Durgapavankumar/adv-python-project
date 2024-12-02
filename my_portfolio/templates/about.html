@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="/">Durga Pavan's Portfolio</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="/projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/experience">Experience</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container mt-5 pt-5">
+      <h2 class="text-primary font-weight-bold">About Me</h2>
+      <p>
+        I am a graduate student at the University of Central Missouri, pursuing
+        a Master of Science in Computer Software Engineering. I have previous
+        experience as a Teaching Assistant and as an Application Developer at
+        DBS Bank, where I worked on improving backend services and system
+        performance.
+      </p>
+      <h3>Technical Skills</h3>
+      <ul>
+        <li>Languages: C++, JavaScript, SQL, Python</li>
+        <li>Frameworks: React, Node.js, Flask</li>
+        <li>Tools: Docker, Git, JIRA, AWS, Azure</li>
+      </ul>
+      <h3>Publications</h3>
+      <ul>
+        <li>
+          <a href="https://ieeexplore.ieee.org/document/10136052"
+            >Enhanced Physical Layer Security for RIS-aided Wireless Network</a
+          >
+        </li>
+      </ul>
+      <h3>Connect with Me</h3>
+      <p>
+        <a
+          href="https://www.linkedin.com/in/durga-pavan-kumar/"
+          class="btn btn-outline-primary"
+          >LinkedIn</a
+        >
+        <a
+          href="https://github.com/Durgapavankumar"
+          class="btn btn-outline-dark"
+          >GitHub</a
+        >
+      </p>
+    </div>
+
+    <footer class="footer text-center fixed-bottom">
+      <p>&copy; 2024 Durga Pavan Kumar Pailla. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
