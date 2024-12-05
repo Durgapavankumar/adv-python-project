@@ -6,8 +6,12 @@ from flask_sqlalchemy import SQLAlchemy
 import os
 
 app = Flask(__name__)
+
+# Use an absolute path for the SQLite database
+basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'yoursecretkey')  # Use environment variable for security
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///messages.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{os.path.join(basedir, 'messages.db')}"
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 # Define the ContactMessage model
@@ -39,8 +43,6 @@ def projects():
 def experience():
     return render_template('experience.html')
 
-
-
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
     form = ContactForm()
@@ -51,9 +53,11 @@ def contact():
             db.session.add(new_message)
             db.session.commit()
             flash("Message sent successfully!", "success")
+            print("Message added to database successfully.")
         except Exception as e:
             db.session.rollback()
             flash(f"An error occurred: {str(e)}", "danger")
+            print(f"Error when committing to database: {e}")
         return redirect(url_for('contact'))
     else:
         # Log the form errors for debugging
@@ -61,7 +65,6 @@ def contact():
             for error in errors:
                 print(f"Error in the {field} field - {error}")
     return render_template('contact.html', form=form)
-
 
 # Custom error handlers
 @app.errorhandler(404)
