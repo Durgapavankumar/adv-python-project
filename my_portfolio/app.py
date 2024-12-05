@@ -1,30 +1,24 @@
+import os
+from pymongo import MongoClient
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_wtf import FlaskForm
 from wtforms import StringField, TextAreaField, SubmitField
 from wtforms.validators import DataRequired
-import os
-from pymongo import MongoClient
-from dotenv import load_dotenv
+import dotenv
 
-# Create Flask app instanc
+# Load .env if exists
+dotenv.load_dotenv()
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'yoursecretkey')
 
-
-
-# MongoDB setup
-load_dotenv()
-
+# MongoDB Setup
 MONGO_URI = os.getenv('MONGO_URI')
 client = MongoClient(MONGO_URI)
+db = client.portfolio  # Replace 'portfolio' with the name of your database
+contact_collection = db.contact_messages  # Replace 'contact_messages' with the name of your collection
 
-
-db = client.portfolio_db
-contact_collection = db.contact_messages
-
-
-
-# Contact Form
+# ContactForm Class
 class ContactForm(FlaskForm):
     name = StringField('Name', validators=[DataRequired()])
     message = TextAreaField('Message', validators=[DataRequired()])
@@ -54,8 +48,8 @@ def contact():
         try:
             # Save the message to the MongoDB collection
             new_message = {
-                'name': form.name.data,
-                'message': form.message.data
+                "name": form.name.data,
+                "message": form.message.data
             }
             contact_collection.insert_one(new_message)
             flash("Message sent successfully!", "success")
@@ -74,4 +68,4 @@ def internal_server_error(e):
     return render_template('500.html'), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=os.getenv('FLASK_DEBUG', 'False') == 'True')
